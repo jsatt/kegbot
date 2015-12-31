@@ -1,0 +1,17 @@
+Kegbot
+======
+
+This is a project to build a system for tracking kegerator usage and displaying real time
+information about kegs.
+
+Planned Features
+----------------
+
+* Flow meter recording
+* Temperature reading
+* Pluggable backend for running on different platforms (Raspberry Pi, Cubie, Edison, etc.)
+* Support multiple flow meters inputs, limited only by the platform GPIO
+* Interface for displaying keg stats (amount in keg, style, ABV, etc) in real time
+* Track recipe, batch, style, abv, stats for display
+* Web admin interface for easy management of all manual input data
+* Pluggable backend for reporting stats to other systems (statsd?)
