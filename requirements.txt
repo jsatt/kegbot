@@ -1,2 +1,1 @@
-Flask==0.10.1
-Flask-Migrate==1.7.0
+Django>=1.9.1,<1.10
