@@ -1,5 +1,6 @@
-from django.conf import settings
 from django.db import models
+
+from kegbot.boards import board
 
 
 class Beverage(models.Model):
@@ -28,7 +29,7 @@ class TapReader:
     def __init__(self, tap):
         self.tap = tap
         self.pulses = 0
-        settings.BOARD.setup_event_handling(self.tap.channel, self.process_pulse)
+        board.setup_event_handling(self.tap.channel, self.process_pulse)
 
     def reset_pulses(self):
         self.pulses = 0

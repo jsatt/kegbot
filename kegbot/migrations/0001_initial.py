@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('channel', models.CharField(max_length=10)),
-                ('factor', models.IntegerField(default=0)),
+                ('factor', models.IntegerField(default=1)),
                 ('total_volume', models.FloatField(default=0)),
                 ('current_volume', models.FloatField(default=0)),
                 ('beverage', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='kegbot.Beverage')),
