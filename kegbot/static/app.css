@@ -1,0 +1,10 @@
+body {
+  color: #f00;
+  background: -webkit-linear-gradient(bottom left, #000, #fff);
+  background: -moz-linear-gradient(bottom left, #000, #fff);
+  background: -o-linear-gradient(bottom left, #000, #fff);
+  background: -ms-linear-gradient(bottom left, #000, #fff);
+  background: linear-gradient(to top right, #000, #fff);
+}
+
+/*# sourceMappingURL=maps/app.css.map */

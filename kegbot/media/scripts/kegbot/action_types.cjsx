@@ -1,0 +1,7 @@
+types =
+    TEST_ACTIONS: 'TEST_ACTIONS'
+    START_QUERY: 'START_QUERY'
+    FINISH_QUERY: 'FINISH_QUERY'
+    MAKE_QUERY: 'MAKE_QUERY'
+
+module.exports = types
