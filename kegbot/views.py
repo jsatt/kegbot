@@ -1,7 +1,9 @@
-from django.http import HttpResponse
-from kegbot.models import Tap
+from rest_framework.viewsets import ModelViewSet
+
+from .models import Tap
+from .serializers import TapSerializer
 
 
-def main(request):
-    t1, t2 = Tap.objects.all()
-    return HttpResponse('t1: {}\nt2: {}'.format(t1.current_volume, t2.current_volume))
+class TapViewSet(ModelViewSet):
+    queryset = Tap.objects.all()
+    serializer_class = TapSerializer
