@@ -1,5 +1,6 @@
 from celery import shared_task
-from django.db.models import Coalesce, F, functions
+from django.db.models import F
+from django.db.models.functions import Coalesce, Greatest
 
 from .models import Pour, Tap
 
@@ -13,7 +14,7 @@ def record_pulses(payload):
     Pour.objects.filter(id=pour.id).update(
         beverage=tap.beverage,
         dispensed_ml=dispensed_ml,
-        end=functions.Greatest(payload['last_pulse'], Coalesce('end', 'start'))
+        end=Greatest(payload['last_pulse'], Coalesce('end', 'start'))
     )
 
     Tap.objects.filter(id=tap.id).update(dispensed_ml=dispensed_ml)
