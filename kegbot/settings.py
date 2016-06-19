@@ -99,3 +99,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+### Celery Settings
+
+BROKER_URL = 'redis://'
+
+
+### Kegbot Defaults
+
+DISPENSE_EXPIRE = 5  # number of seconds after dispensing stop to consider pour complete
