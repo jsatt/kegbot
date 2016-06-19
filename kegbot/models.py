@@ -9,6 +9,9 @@ class Beverage(models.Model):
     ibu = models.IntegerField(null=True, blank=True)
     srm = models.IntegerField(null=True, blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Tap(models.Model):
     channel = models.CharField(max_length=10)
@@ -16,6 +19,9 @@ class Tap(models.Model):
     total_ml = models.FloatField(default=0)
     dispensed_ml = models.FloatField(default=0)
     beverage = models.ForeignKey(Beverage, null=True, blank=True)
+
+    def __str__(self):
+        return self.channel or str(self.pk)
 
     def reset_dispense(self):
         self.dispensed_ml = 0
@@ -30,3 +36,10 @@ class Pour(models.Model):
     start = models.DateTimeField(default=timezone.now)
     end = models.DateTimeField(null=True, blank=True)
     dispensed_ml = models.FloatField(default=0)
+
+    def __str__(self):
+        return '{} - tap {} - {}'.format(
+            self.beverage,
+            self.tap,
+            self.start
+        )
