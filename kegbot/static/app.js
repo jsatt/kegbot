@@ -72,10 +72,11 @@ Link = require('react-router').Link;
 
 TestComponent = function(props) {
   return React.createElement("div", {
-    "className": 'test-component'
+    "className": 'test-component col-xs-12'
   }, React.createElement("p", null, "test"), React.createElement(Link, {
     "to": "/taps/123"
   }, "to taps"), props.children, props.kegbot.testing, React.createElement("button", {
+    "className": "btn btn-primary",
     "onClick": props.onAddClick
   }, "Add another"), props.kegbot.taps.map(function(tap) {
     return React.createElement("div", {
@@ -244,7 +245,7 @@ ReactDOM = require('react-dom');
 TapsComponent = React.createClass({displayName: "TapsComponent",
   render: function() {
     return React.createElement("div", {
-      "className": 'test-component'
+      "className": "test-component"
     }, React.createElement("p", null, "home ", this.props.params.id));
   }
 });

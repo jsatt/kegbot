@@ -3,12 +3,12 @@ ReactDOM = require 'react-dom'
 Link = require('react-router').Link
 
 TestComponent = (props) ->
-        <div className='test-component'>
+        <div className='test-component col-xs-12'>
             <p>test</p>
             <Link to="/taps/123">to taps</Link>
             {props.children}
             {props.kegbot.testing}
-            <button onClick=props.onAddClick>Add another</button>
+            <button className="btn btn-primary" onClick=props.onAddClick>Add another</button>
             {props.kegbot.taps.map (tap) ->
                 <div key={tap.id}>
                     <h2>{tap.beverage.name}</h2>
