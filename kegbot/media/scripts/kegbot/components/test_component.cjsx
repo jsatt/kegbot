@@ -1,8 +1,19 @@
 React = require 'react'
 ReactDOM = require 'react-dom'
 Link = require('react-router').Link
+connect = require('react-redux').connect
 
-TestComponent = (props) ->
+actions = require './actions.cjsx'
+
+mapStateToProps = (state) ->
+    kegbot: state.kegbot
+
+mapDispatchToProps = (dispatch) ->
+    onAddClick: ->
+        dispatch actions.makeQuery()
+
+TestComponent = React.createClass
+    render: (props) ->
         <div className='test-component col-xs-12'>
             <p>test</p>
             <Link to="/taps/123">to taps</Link>
@@ -30,4 +41,4 @@ TestComponent = (props) ->
             }
         </div>
 
-module.exports = TestComponent
+module.exports = connect(mapStateToProps, mapDispatchToProps)(TestComponent)

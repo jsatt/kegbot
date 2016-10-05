@@ -3,7 +3,7 @@ ReactDOM = require 'react-dom'
 
 TapsComponent = React.createClass
     render: ->
-        <div className='test-component'>
+        <div className="test-component">
             <p>home {@props.params.id}</p>
         </div>
 

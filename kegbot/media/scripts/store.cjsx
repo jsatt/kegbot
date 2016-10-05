@@ -1,5 +1,7 @@
-applyMiddleware = require('redux').applyMiddleware
-createStore = require('redux').createStore
+{
+    applyMiddleware
+    createStore
+} = require 'redux'
 thunk = require('redux-thunk').default
 
 kegbotApp = require './reducers.cjsx'

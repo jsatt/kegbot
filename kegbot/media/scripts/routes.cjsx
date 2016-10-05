@@ -1,12 +1,16 @@
-Provider = require('react-redux').Provider
 React = require 'react'
-Route = require('react-router').Route
-Router = require('react-router').Router
-browserHistory = require('react-router').browserHistory
-syncHistoryWithStore = require('react-router-redux').syncHistoryWithStore
+{Provider} = require 'react-redux'
+{
+    IndexRoute
+    Route
+    Router
+} = require 'react-router'
+{browserHistory} = require 'react-router'
+{syncHistoryWithStore} = require 'react-router-redux'
 
 Taps = require './taps/components.cjsx'
-TestContainer = require './kegbot/containers.cjsx'
+TapList = require './kegbot/components/tap_list.cjsx'
+MainLayout = require './layouts/main_layout.cjsx'
 store = require './store.cjsx'
 
 history = syncHistoryWithStore(browserHistory, store)
@@ -14,7 +18,8 @@ history = syncHistoryWithStore(browserHistory, store)
 routes =
     <Provider store=store>
         <Router history={history}>
-            <Route path="/" component=TestContainer>
+            <Route path="/" component=MainLayout>
+                <IndexRoute component=TapList />
                 <Route path="taps/:id" component={Taps}></Route>
             </Route>
         </Router>
