@@ -2,8 +2,11 @@ React = require 'react'
 ReactDOM = require 'react-dom'
 {Component} = require 'react'
 {connect} = require 'react-redux'
+{Link} = require 'react-router'
+Helmet = require 'react-helmet'
 
 actions = require '../actions.cjsx'
+Tap = require './tap.cjsx'
 
 mapStateToProps = (state) ->
     taps: state.kegbot.taps
@@ -15,13 +18,15 @@ class TapListComponent extends Component
     componentWillMount: ->
         @props.loadTaps()
     render: ->
-        console.log 'render', this, arguments
         <div id="tap-list">
-            <ol>
+            <Helmet title="Taps" />
             {for tap in @props.taps
-                <li key=tap.beverage.id>{tap.beverage.name}</li>
+                <Link to="/taps/#{tap.id}" key=tap.id>
+                    <Tap tap=tap />
+                </Link>
             }
-            </ol>
         </div>
 
+TapListComponent.defaultProps =
+    title: 'Taps'
 module.exports = connect(mapStateToProps, mapDispatchToProps)(TapListComponent)
