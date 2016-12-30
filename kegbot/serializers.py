@@ -7,7 +7,7 @@ class TapSerializer(ModelSerializer):
     class Meta:
         model = Tap
         fields = (
-            'id', 'channel', 'pulses_per_ml', 'total_ml', 'dispensed_ml', 'beverage',
-            'pours'
+            'id', 'channel', 'pulses_per_ml', 'current_level', 'total_ml',
+            'dispensed_ml', 'beverage', 'pours',
         )
         depth = 1

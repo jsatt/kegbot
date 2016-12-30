@@ -80,7 +80,14 @@ Tap = (function(superClass) {
   }
 
   Tap.prototype.render = function() {
-    return React.createElement("div", null, this.props.tap.beverage.name);
+    return React.createElement("div", {
+      "className": "tap"
+    }, this.props.tap.beverage.name, React.createElement("div", {
+      "className": "level-container"
+    }, React.createElement("div", {
+      "className": "level",
+      "data-level": this.props.tap.current_level
+    })));
   };
 
   return Tap;

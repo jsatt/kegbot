@@ -4,5 +4,9 @@ ReactDOM = require 'react-dom'
 
 class Tap extends Component
     render: ->
-        <div>{@props.tap.beverage.name}</div>
+        <div className="tap">{@props.tap.beverage.name}
+            <div className="level-container">
+                <div className="level" data-level=@props.tap.current_level></div>
+            </div>
+        </div>
 module.exports = Tap

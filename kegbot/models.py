@@ -29,6 +29,12 @@ class Tap(models.Model):
     def calculate_ml(self, pulses):
         return pulses / self.pulses_per_ml
 
+    def current_level(self):
+        if self.total_ml and self.dispensed_ml <= self.total_ml:
+            remaining = self.total_ml - self.dispensed_ml
+            return remaining / self.total_ml * 100
+        return 0
+
 
 class Pour(models.Model):
     tap = models.ForeignKey(Tap, related_name='pours')
