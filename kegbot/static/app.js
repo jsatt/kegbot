@@ -247,11 +247,11 @@ MainLayout = (function(superClass) {
     }), React.createElement("div", {
       "className": "row"
     }, React.createElement("header", {
-      "className": "col-xs-12"
+      "className": "col-12"
     }, "Header stuff will go here"), React.createElement("article", {
-      "className": "col-xs-12"
+      "className": "col-12"
     }, this.props.children), React.createElement("footer", {
-      "className": "col-xs-12"
+      "className": "col-12"
     }, "footer if I need one")));
   };
 
