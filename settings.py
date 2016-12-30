@@ -16,7 +16,7 @@ INSTALLED_APPS += (
     'django.contrib.sessions',
     'django.contrib.messages',
 
-    'kombu.transport.django',
+    'django_celery_results',
 )
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

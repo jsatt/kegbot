@@ -105,7 +105,7 @@ STATIC_URL = '/static/'
 
 ### Celery Settings
 
-BROKER_URL = 'redis://'
+CELERY_BROKER_URL = 'redis://'
 
 
 ### Kegbot Defaults
